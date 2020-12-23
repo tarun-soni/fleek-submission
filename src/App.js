@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Nav from "./components/Nav.jsx";
+import styled from "styled-components";
+import HeroSection from "./components/HeroSection";
+import Select from "./components/Select";
+import { useState } from "react";
 
 function App() {
+  const [isSelected, setIsSelected] = useState(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Main>
+        <HeroSection />
+
+        <Nav />
+      </Main>
+      <Select />
+    </>
   );
 }
-
+const Main = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 export default App;
